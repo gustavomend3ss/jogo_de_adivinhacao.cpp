@@ -1,14 +1,15 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 #include<windows.h>
-#include <ctime>
 
 using namespace std;
 
 int main(){
+ 
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    
     cout << "**************************************";
     cout << "\n*Boas vindas ao Jogo da Adivinhação!*\n";
     cout << "**************************************";
