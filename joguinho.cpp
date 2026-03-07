@@ -1,5 +1,6 @@
 #include<iostream>
 #include<windows.h>
+#include <ctime>
 
 using namespace std;
 
@@ -7,7 +8,7 @@ int main(){
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    const int NUMERO_SECRETO = 42;
+    
     cout << "**************************************";
     cout << "\n*Boas vindas ao Jogo da Adivinhação!*\n";
     cout << "**************************************";
@@ -29,6 +30,8 @@ int main(){
         numero_de_tentativas = 5;
     }
 
+    srand(time(NULL));
+    const int NUMERO_SECRETO = rand()%100;
     bool nao_acertou = true;
     int tentativas = 0;
 
