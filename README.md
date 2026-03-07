@@ -1,58 +1,63 @@
-# 🎯 Jogo da Adivinhação (C++)
+🎯 Jogo da Adivinhação em C++
 
-Jogo de adivinhação em C++ executado no terminal. O objetivo é descobrir o número secreto gerado aleatoriamente, escolhendo um nível de dificuldade e tentando acertar dentro do limite de tentativas.
-
----
-
-## ✅ Funcionalidades
-
-- 🎲 Número secreto gerado aleatoriamente (`0` a `99`)
-- 🧩 3 níveis de dificuldade:
-  - **Fácil (F)** → 15 tentativas  
-  - **Médio (M)** → 10 tentativas  
-  - **Difícil (D)** → 5 tentativas
-- 📌 Dica após cada chute:
-  - Informa se o chute foi **maior** ou **menor** que o número secreto
-- ⭐ Sistema de pontuação:
-  - Pontuação inicial: **1000.0**
-  - Penalidade por erro: `|chute - numero_secreto| / 2.0`
-  - A pontuação vai diminuindo a cada tentativa
+Um jogo simples desenvolvido em **C++** que roda no terminal.  
+O objetivo do jogo é descobrir um **número secreto gerado aleatoriamente** dentro de um número limitado de tentativas, dependendo do nível de dificuldade escolhido pelo jogador.
 
 ---
 
-## 🧠 Como funciona a pontuação
+📌 Sobre o projeto
 
-A cada tentativa, o jogo calcula quantos pontos você perde com base na distância do seu chute para o número secreto:
+O programa gera um número aleatório entre **0 e 99** e o jogador deve tentar adivinhar qual é esse número.
 
-pontos_perdidos = abs(chute - numero_secreto) / 2.0
-pontos = pontos - pontos_perdidos
+Após cada tentativa, o jogo informa se o chute foi:
 
-Quanto mais perto você chegar, menos pontos perde.
+- **Maior** que o número secreto
+- **Menor** que o número secreto
 
----
-
-## 🛠️ Requisitos
-
-- **Windows** (o código usa `windows.h` para configurar UTF-8 no console)
-- Compilador C++ (ex.: **g++** via MinGW/MSYS2)
-
-
-Quanto mais perto você chegar, menos pontos perde.
+Além disso, o jogo possui um **sistema de pontuação**, onde o jogador começa com **1000 pontos** e perde pontos dependendo da distância do chute em relação ao número correto.
 
 ---
 
-## 🛠️ Requisitos
+⚙️ Níveis de dificuldade
 
-- **Windows** (o código usa `windows.h` para configurar UTF-8 no console)
-- Compilador C++ (ex.: **g++** via MinGW/MSYS2)
+O jogador pode escolher entre três níveis:
+
+| Dificuldade | Tentativas |
+|-------------|------------|
+| Fácil (F)   | 15 |
+| Médio (M)   | 10 |
+| Difícil (D) | 5 |
 
 ---
 
-## ▶️ Como compilar e executar
+⭐ Sistema de pontuação
 
-Dentro da pasta do projeto:
+A pontuação começa em **1000 pontos**.
 
-### Compilar (g++)
+A cada erro, o jogo calcula a penalidade usando a fórmula:
 
-```bash
+```cpp
+double pontos_perdidos = abs(chute - NUMERO_SECRETO) / 2.0;
+pontos -= pontos_perdidos;
+
+🖥️ Tecnologias utilizadas
+
+- C++
+
+- Biblioteca padrão do C++:
+
+- iostream
+
+- cstdlib
+
+- ctime
+
+- Biblioteca windows.h para configurar UTF-8 no console
+
+▶️ Como compilar
+
+Entre na pasta do projeto e execute:
 g++ joguinho.cpp -o joguinho
+
+Após compilar, execute:
+./joguinho
