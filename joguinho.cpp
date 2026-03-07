@@ -57,6 +57,8 @@ int main(){
     {
         cout<<"\nParabéns! Você acertou!";
         nao_acertou = false;
+        break;
+
     }
     else if (maior)
     {
